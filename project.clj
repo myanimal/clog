@@ -5,6 +5,7 @@
                    :exclusions [org.clojure/clojure
                                clj-stacktrace]]
                  [net.cgrand/moustache "1.1.0"]
+                 [com.taoensso/carmine "0.10.1"]
                  ; [lobos "1.0.0-SNAPSHOT"]
                  ; [korma "0.2.1"]
                  ; [enlive "1.0.0"]
