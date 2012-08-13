@@ -14,6 +14,9 @@
   "Acts like (partial with-conn pool spec-server1)."
   [& body] `(r/with-conn pool spec-server1 ~@body))
 
+;;; TODO: get user id from session
+(def userId "m24032")
+
 
 (defn chooseOponent []
   "Chose oponent for game"
@@ -33,7 +36,7 @@
     (and (= weapon "scissors")  (= oponent "rock"))       { "result" -1, "message" "You Lose! Paper beats rock!" }
     :else { "result" 0, "message" "Impossible.." }))
   (assoc output "score" (str (redis
-    (r/incrby "score" (str (output "result")))))))
+    (r/zincrby "leaderboard" (str (output "result")) userId)))))
 
 (defn index
   "Index page handler"
