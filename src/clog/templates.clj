@@ -8,4 +8,5 @@
   [:title] (content "rock.paper.scissors")
   [:span.weapon] (content weapon)
   [:span.oponent] (content oponent)
-  [:span.result] (content result))
+  [:span.score] (content (result "score"))
+  [:span.result] (content (result "message")))
